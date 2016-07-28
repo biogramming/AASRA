@@ -1,0 +1,47 @@
+library(Biostrings)
+##generate standard counts
+randomnumber<-sample(1:50,length(testfasta1),replace=TRUE)
+standardcount<-data.frame(GeneID=names(testfasta1),stdcount=randomnumber)
+write.table(standardcount,'standardcount',sep="\t")
+
+##generate anchored reference
+smallRNA<-readDNAStringSet("index.fa")
+padseq<-function(x,adaptor5,adaptor3,subname){
+  print(adaptor5)
+  print(adaptor3)
+  mmupad<-paste0(x,adaptor3)
+  mmupad<-paste0(adaptor5,mmupad)
+  mmupad<-DNAStringSet(mmupad)
+  mmupad
+  names(mmupad)<-gsub(" ","",names(x))
+  names(mmupad)<-paste0(names(mmupad),subname)
+  return(mmupad)
+  
+}
+smallRNAanchored<- padseq(smallRNA,"CCCCCCCCCC","GGGGGGGGGG","")
+writeXStringSet(smallRNAanchored,"smallRNAindexanchored.fa")
+system("bowtie2-build smallRNAindexanchored.fa smallRNAindexanchored.fa")
+
+##simulation data with anchor
+testfasta1<-padseq(smallRNA,"CCCCCC","GGGGGG","")
+standardcount<-read.table("standardcount",sep="\t")
+sum(names(smallRNAanchored)!=standardcount$GeneID) #check sequence order
+testfasta<-rep(testfasta1,standardcount$stdcount)
+names(testfasta)<-c(1:length(testfasta))
+writeXStringSet(testfasta,"testanchored.fa")
+
+##simulation data without anchor
+testfasta1<-padseq(smallRNA,"","","")
+standardcount<-read.table("standardcount",sep="\t")
+sum(names(smallRNAanchored)!=standardcount$GeneID) #check sequence order
+testfasta<-rep(testfasta1,standardcount$stdcount)
+names(testfasta)<-c(1:length(testfasta))
+writeXStringSet(testfasta,"testfasta.fa")
+
+
+
+##generate SAF shortstack index
+sncRNA_SAF<-data.frame(GeneID=names(smallRNAanchored),Chr=names(smallRNAanchored),Start=1,End=width(smallRNAanchored),Strand="+")
+write.table(sncRNA_SAF,"sncRNA_SAF.saf",quote=FALSE,sep="\t",row.names=FALSE) 
+
+
