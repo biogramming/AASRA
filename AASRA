@@ -1,0 +1,47 @@
+#!/bin/bash
+
+##anchor sample
+
+echo
+while [ -n "$1" ]
+do
+    case "$1" in
+        -h) help="$1"
+            shift;;
+        -p) thread="$2"
+            thread1="-p "
+	    thread1+=$thread
+	    shift;;
+        -f) filetype="-f";; 
+        -i) input="$2"
+            input1="-i "
+	    input1+=$input
+	    shift;;
+	-l) left="$2"
+            left1="-l "
+	    left1+=$left
+            shift;;
+	-r) right="$2"
+            right1="-r " 
+	    right1+=$right
+            shift;;
+	-b) bowtieIndex="$2"
+	    bowtieIndex1="-b "
+	    bowtieIndex1+=$bowtieIndex
+            shift;
+    esac
+    shift
+done
+
+if test $help
+then
+    echo "python input command: AASRA.py $help"
+    AASRA.py $help
+else
+    echo "python input command: AASRA.py $input1 $left1 $right1 $bowtieIndex1"
+    AASRA.py $input1 $left1 $right1 $bowtieIndex1
+
+##bowtie2 alignment
+    echo "bowtie2 input command: bowtie2 --norc -N 1 -L 16 -i S,0,0.2 $filetype $thread1 -x $bowtieIndex -U anchored_$input -S anchored_$input.sam"
+    bowtie2 --norc -N 1 -L 16 -i S,0,0.2 $filetype $thread1 -x $bowtieIndex -U anchored_$input -S anchored_$input.sam
+fi

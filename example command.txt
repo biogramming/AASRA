@@ -1,0 +1,3 @@
+AASRA-index -i index.fa -l CCCCCCCCCC -r GGGGGGGGGG -s index.saf
+
+AASRA -f -p 4 -i sample.fa -l CCCCC -r GGGGG -b anchored_index.fa
