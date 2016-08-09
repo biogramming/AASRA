@@ -150,3 +150,6 @@ row, and are:
 TEST
     Test data and brief instructions are available at
     http://github/data/AASRA/testData/
+    
+COUNT READS
+    We suggest to use featureCounts to count the reads, which support the SAF file. See example commands.
