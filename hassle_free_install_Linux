@@ -1,0 +1,29 @@
+#!/bin/bash
+
+##create path for AASRA in /usr/local
+sudo mkdir -p /usr/local/AASRA
+
+##install bowtie2
+unzip bowtie2-2.1.0-source.zip
+cd bowtie2-2.1.0
+sudo make
+sudo cp bowtie* /usr/local/AASRA
+cd ..
+
+##install featureCounts
+tar zxvf subread-1.5.2-source.tar.gz
+cd subread-1.5.2-source/src
+sudo make -f Makefile.Linux
+cd ../bin
+sudo cp featureCounts /usr/local/AASRA
+cd ../..
+
+##install AASRA
+sudo chmod 755 AASRA*
+sudo cp AASRA* /usr/local/AASRA
+
+echo
+echo "AASRA Installation complete."
+echo
+echo "Executable files of AASRA and dependencies are located in the directory: /usr/local/AASRA"
+echo
