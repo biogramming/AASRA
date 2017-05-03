@@ -48,7 +48,7 @@ INSTALL
     
     2.Unzip the AASRA package and navigate to the AASRA directory in the terminal.
     
-    3.Make the file "hassle_free_install_Mac" executable with the command: "sudo chmod 755 hassle_free_install_Mac".
+    3.Make the installation file "hassle_free_install_Mac" executable with the command: "sudo chmod 755 hassle_free_install_Mac".
     
     4.Execute the file with the command: "./hassle_free_install_Mac". Xcode required for Mac OS.
     
@@ -58,8 +58,7 @@ INSTALL
     AASRA files and all the listed dependencies will be installed under the directory "/usr/local/AASRA".
     
   Advanced installation:
-  
-    For advanced users, download AASRA from the Download section of the Github site. Follow the instruction of your operating system to add the directory to your PATH. If you prefer to install AASRA by copying the AASRA files to an existing directory in your PATH and make them executable, make sure you copy all the AASRA files, including AASRA.py, AASRA AASRA-index.py and AASRA-index. By adding the AASRA files to your PATH environment variable, you ensure that whenever you run AASRA-index -h or AASRA -h from the command line, you will get the version you just installed without specifying the entire path.
+  For advanced users, download AASRA from the Download section of the Github site. Follow the instruction of your operating system to add the directory to your PATH. If you prefer to install AASRA by copying the AASRA files to an existing directory in your PATH and make them executable, make sure you copy all the AASRA files, including AASRA.py, AASRA AASRA-index.py and AASRA-index. By adding the AASRA files to your PATH environment variable, you ensure that whenever you run AASRA-index -h or AASRA -h from the command line, you will get the version you just installed without specifying the entire path.
 
 
   Installation test:
