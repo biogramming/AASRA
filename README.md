@@ -58,7 +58,7 @@ INSTALL
 
   Installation test:
     Test data and brief instructions are available in the "testData" folder in AASRA packages or at
-    https://github.com/biogramming/AASRA/testData
+    https://github.com/biogramming/AASRA/tree/master/testData
 
 
 USAGE
