@@ -43,11 +43,11 @@ INSTALL
     http://subread.sourceforge.net/
 
   Hassle-free installation
-    1. Download AASRA from the Download section of the Github site. 
-    2. Unzip the AASRA package and navigate to the AASRA directory in the terminal.
-    3. Change file permission to execute the file hassle_free_install_Mac with the following command: "sudo chmod 755 hassle_free_install_Mac". 
-    4. Execute the file with the command: "./hassle_free_install_Mac". Xcode required for compilation in MacOS.
-    5. Add AASRA to the PATH environment with the following command: "export PATH=$PATH:/usr/local/AASRA"
+    1.Download AASRA from the Download section of the Github site.
+    2.Unzip the AASRA package and navigate to the AASRA directory in the terminal.
+    3.Change file permission to execute the file hassle_free_install_Mac with the following command: "sudo chmod 755 hassle_free_install_Mac".
+    4.Execute the file with the command: "./hassle_free_install_Mac". Xcode required for compilation in MacOS.
+    5.Add AASRA to the PATH environment with the following command: "export PATH=$PATH:/usr/local/AASRA".
     
     Linux user should use the file "hassle_free_install_Linux" instead for the same procedures described above. Note that AASRA files and all the listed dependencies will be installed under the directory "/usr/local/AASRA" which is added to the PATH environment.
 
