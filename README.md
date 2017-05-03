@@ -23,7 +23,9 @@ AASRA: a comprehensive solution for small RNA annotation
 
 CITATIONS
     If you use AASRA in your work, please cite one of the following:
-
+    AASRA: An Anchor Alignment-Based Small RNA Annotation Pipeline
+    Chong Tang, Yeming Xie, Wei Yan
+    bioRxiv 132928; doi: https://doi.org/10.1101/132928
     
 INSTALL
   Dependencies
