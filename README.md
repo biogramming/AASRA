@@ -43,20 +43,27 @@ INSTALL
     http://subread.sourceforge.net/
 
   Hassle-free installation:
+  
     1.Download AASRA from the Download section of the Github site.
+    
     2.Unzip the AASRA package and navigate to the AASRA directory in the terminal.
+    
     3.Change file permission to execute the file hassle_free_install_Mac with the following command: "sudo chmod 755 hassle_free_install_Mac".
+    
     4.Execute the file with the command: "./hassle_free_install_Mac". Xcode required for compilation in MacOS.
+    
     5.Add AASRA to the PATH environment with the following command: "export PATH=$PATH:/usr/local/AASRA".
     
     Linux user should use the file "hassle_free_install_Linux" instead for the same procedures described above. 
     AASRA files and all the listed dependencies will be installed under the directory "/usr/local/AASRA".
     
   Advanced installation:
+  
     For advanced users, download AASRA from the Download section of the Github site. Follow the instruction of your operating system to add the directory to your PATH. If you prefer to install AASRA by copying the AASRA files to an existing directory in your PATH and make them executable, make sure you copy all the AASRA files, including AASRA.py, AASRA AASRA-index.py and AASRA-index. By adding the AASRA files to your PATH environment variable, you ensure that whenever you run AASRA-index -h or AASRA -h from the command line, you will get the version you just installed without specifying the entire path.
 
 
   Installation test:
+  
     Test data and brief instructions are available in the "testData" folder in AASRA packages or at
     https://github.com/biogramming/AASRA/tree/master/testData
 
