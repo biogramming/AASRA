@@ -90,7 +90,7 @@ OPTIONS
 The AASRA aligner:
     Usage: AASRA [options] [-h] [-f] <fasta_input> -p <thread_number> -i <input_file> -l <5’_anchor_sequence> -r <3’_anchor_sequence> -b <anchored_bowtie2_index>
 
-Default command: AASRA -p 4 -i sample.fastq -l CCCCC -r GGGGG -b anchored_index.fa
+Default command: AASRA -p 4 -i sample.fastq -l CCC -r GGG -b anchored_index.fa
 
 OPTIONS
     -h : print current version of AASRA and a help message
